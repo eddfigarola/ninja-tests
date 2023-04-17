@@ -103,7 +103,7 @@ export default class DevicesPage {
       ).replace(/GB|\s/g, ""),
       deviceEditButton: await deviceBoxElement.find(this.deviceEditClass),
       deviceRemoveButton: await deviceBoxElement.find(this.deviceRemoveClass),
-      deviceId: this.getDeviceId(deviceBoxElement),
+      deviceId: await this.getDeviceId(deviceBoxElement),
     };
   }
 }
