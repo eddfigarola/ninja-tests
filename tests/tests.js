@@ -35,8 +35,8 @@ test("List of devices is displayed correctly", async (t) => {
   const devices = await apiHelper.getDevices();
 
   await Promise.all(
-    devices.body.map(async (item, index) => {
-      let device = await devicesPage.findDevice(index);
+    devices.body.map(async (item) => {
+      let device = await devicesPage.findDevice(item["id"]);
 
       // Verify the device name, device type and device capacity match the values from API response
       await t
